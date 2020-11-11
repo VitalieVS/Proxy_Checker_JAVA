@@ -10,6 +10,12 @@ class Main {
         obj[0] = new ip("200.115.157.211","4145");
         obj[1] = new ip("209.103.178.6","1090");
 
+        for (int i = 0; i < obj.length; i++) {
+            ConnectionThread thread = new ConnectionThread("anal");
+            //System.out.println("trying");
+            thread.start();
+        }
+
 
         //* URL url = new URL("http://pubproxy.com/api/proxy");
        // HttpURLConnection con = (HttpURLConnection) url.openConnection();
