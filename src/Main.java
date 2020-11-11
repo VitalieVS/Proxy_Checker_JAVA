@@ -5,7 +5,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException  {
+        ip[] obj = new ip[2];
+        obj[0] = new ip("200.115.157.211","4145");
+        obj[1] = new ip("209.103.178.6","1090");
+
 
         //* URL url = new URL("http://pubproxy.com/api/proxy");
        // HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -22,21 +26,21 @@ class Main {
        // in.close();
 
 
-        System.out.println(isOnline());
-        System.out.println(content);
+       // System.out.println(isOnline());
+        //System.out.println(content);
+    }
     }
 
-    public static boolean isOnline(){
-        System.setProperty("http.proxyHost", "119.206.242.196");
-        System.setProperty("http.proxyPort", "80");
-        try {
-            HttpURLConnection connection = (HttpURLConnection)new URL("http://www.google.com").openConnection();
-            connection.connect();
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+class ip {
+    String ip;
+    String port;
+    ip (String _ip, String _port) {
+        ip = _ip;
+        port = _port;
+    }
+
+    public void showData() {
+        System.out.println("ip=" + ip + " Port= " + port);
     }
 }
-
 
